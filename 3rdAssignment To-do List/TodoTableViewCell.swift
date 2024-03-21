@@ -1,14 +1,13 @@
-//
-//  TodoTableViewCell.swift
-//  3rdAssignment To-do List
-//
-//  Created by Kinam on 3/21/24.
-//
+
 
 import UIKit
 
 class TodoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var todoCellTitle: UILabel!
+    @IBOutlet weak var todoCellSwitchButton: UISwitch!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

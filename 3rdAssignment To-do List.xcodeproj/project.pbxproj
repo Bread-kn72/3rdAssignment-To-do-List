@@ -13,6 +13,9 @@
 		4DBD4CD42BAC230B00A76077 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD4CD32BAC230B00A76077 /* Base */; };
 		4DBD4CD62BAC230C00A76077 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD4CD52BAC230C00A76077 /* Assets.xcassets */; };
 		4DBD4CD92BAC230C00A76077 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD4CD82BAC230C00A76077 /* Base */; };
+		4DBD4CE32BAC268200A76077 /* todoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD4CE22BAC268200A76077 /* todoData.swift */; };
+		4DBD4CE62BAC281200A76077 /* TodoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4DBD4CE52BAC281200A76077 /* TodoTableViewCell.xib */; };
+		4DBD4CE72BAC281200A76077 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DBD4CE42BAC281200A76077 /* TodoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4DBD4CD52BAC230C00A76077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DBD4CD82BAC230C00A76077 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DBD4CDA2BAC230C00A76077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DBD4CE22BAC268200A76077 /* todoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todoData.swift; sourceTree = "<group>"; };
+		4DBD4CE42BAC281200A76077 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		4DBD4CE52BAC281200A76077 /* TodoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				4DBD4CCC2BAC230B00A76077 /* AppDelegate.swift */,
 				4DBD4CCE2BAC230B00A76077 /* SceneDelegate.swift */,
 				4DBD4CD02BAC230B00A76077 /* ViewController.swift */,
+				4DBD4CE42BAC281200A76077 /* TodoTableViewCell.swift */,
+				4DBD4CE52BAC281200A76077 /* TodoTableViewCell.xib */,
+				4DBD4CE22BAC268200A76077 /* todoData.swift */,
 				4DBD4CD22BAC230B00A76077 /* Main.storyboard */,
 				4DBD4CD52BAC230C00A76077 /* Assets.xcassets */,
 				4DBD4CD72BAC230C00A76077 /* LaunchScreen.storyboard */,
@@ -128,6 +137,7 @@
 				4DBD4CD62BAC230C00A76077 /* Assets.xcassets in Resources */,
 				4DBD4CD92BAC230C00A76077 /* Base in Resources */,
 				4DBD4CD42BAC230B00A76077 /* Base in Resources */,
+				4DBD4CE62BAC281200A76077 /* TodoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +150,8 @@
 			files = (
 				4DBD4CD12BAC230B00A76077 /* ViewController.swift in Sources */,
 				4DBD4CCD2BAC230B00A76077 /* AppDelegate.swift in Sources */,
+				4DBD4CE32BAC268200A76077 /* todoData.swift in Sources */,
+				4DBD4CE72BAC281200A76077 /* TodoTableViewCell.swift in Sources */,
 				4DBD4CCF2BAC230B00A76077 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
