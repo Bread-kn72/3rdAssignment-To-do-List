@@ -40,8 +40,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
-    
     // 추가버튼 구현
     @IBAction func addTodo(_ sender: Any) {
         let title = "To-do 추가"
@@ -53,12 +51,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //확인했을때 처리 할 내용
             let txt = alert.textFields?.first
             if txt?.text?.isEmpty != true {
-                Todo.data.append(Todo(id: <#Int#>, title: (txt!.text!), isCompleted: false))
                 print("입력값 \(txt!.text!)")
             } else {
                 print("입력된 값이 없습니다.")
             }
-                
+            return Todo.data.append(Todo(id: Todo.data.count , title: txt!.text!, isCompleted: false))
         }
         
         alert.addAction(cancel)
