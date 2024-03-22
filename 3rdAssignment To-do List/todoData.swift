@@ -13,4 +13,10 @@ extension Todo {
         Todo(id: 2, title: "Title3", isCompleted: false)
         
     ]
+    
+    static func addTodoList(title: String, isCompleted: Bool = false) {
+            let newId = data.count
+            let newTodo = Todo(id: newId, title: title, isCompleted: isCompleted)
+            data.append(newTodo)
+        }
 }

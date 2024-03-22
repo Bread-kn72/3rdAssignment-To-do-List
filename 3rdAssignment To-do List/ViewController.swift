@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         todoTableView.dataSource = self
         // identifier 수정
         todoTableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
+        
     }
     
 //    private func registerXib() {
@@ -33,8 +34,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = todoTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TodoTableViewCell
         
         let todoItem = todoList[indexPath.row]
+        
         cell.todoCellTitle.text = todoItem.title
         cell.todoCellSwitchButton.isOn = todoItem.isCompleted
+        cell.updateLabelStrikeThrough()
+        
         
         return cell
     }
@@ -50,12 +54,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let ok = UIAlertAction(title: "추가", style: .default) { (_) in
             //확인했을때 처리 할 내용
             let txt = alert.textFields?.first
-            if txt?.text?.isEmpty != true {
-                print("입력값 \(txt!.text!)")
+            if let newTodoText = txt?.text, !newTodoText.isEmpty {
+                Todo.addTodoList(title: newTodoText)
+                print("입력값 \(Todo.data)")
             } else {
                 print("입력된 값이 없습니다.")
             }
-            return Todo.data.append(Todo(id: Todo.data.count , title: txt!.text!, isCompleted: false))
+            self.todoTableView.reloadData()
+            
         }
         
         alert.addAction(cancel)
@@ -68,6 +74,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tf.isSecureTextEntry = false
         }
     }
+    
+    
 }
 
 
