@@ -5,7 +5,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var todoTableView: UITableView!
     
-    let todoList = Todo.data
+    var todoList = Todo.data
     let cellReuseIdentifier = "todoCell"
     let nib = UINib(nibName: "TodoTableViewCell", bundle: nil)
     
@@ -57,6 +57,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             if let newTodoText = txt?.text, !newTodoText.isEmpty {
                 Todo.addTodoList(title: newTodoText)
                 print("입력값 \(Todo.data)")
+                // 데이터를 한번 저장하더라도 새롭게 데이터가 바뀐다면 다시 저장해줘야함.
+                self.todoList = Todo.data
             } else {
                 print("입력된 값이 없습니다.")
             }
