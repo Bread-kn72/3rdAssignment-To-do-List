@@ -13,7 +13,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let nib = UINib(nibName: "TodoTableViewCell", bundle: nil)
     
     // 오늘 날짜 추가
-    
+    var dateString: String? {
+        let date =  Date()                     // 넣을 데이터(현재 시간)
+        let myFormatter = DateFormatter()
+        myFormatter.dateFormat = "MMM/dd yyyy"  // 변환할 형식
+        let dateString = myFormatter.string(from: date)
+        return dateString
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         todoTableView.dataSource = self
         // identifier 수정
         todoTableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
-        
+        today.text = dateString
     }
     
     // tableview의 열 수
@@ -110,8 +116,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             addButton.isHidden = false
         }
     }
-    // edit에서 -버튼으로 cell delete로 
+    // edit에서 -버튼으로 cell delete
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
+    
+    
 }
