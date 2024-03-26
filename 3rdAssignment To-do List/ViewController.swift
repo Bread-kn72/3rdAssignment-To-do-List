@@ -4,6 +4,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     @IBOutlet weak var todoTableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     var todoList = Todo.data
     let cellReuseIdentifier = "todoCell"
@@ -53,6 +55,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+
+    
     
     @IBAction func addTodo(_ sender: Any) {
         // 추가버튼 누를때 알람 구현
@@ -84,6 +88,23 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         alert.addTextField() { (tf) in
             tf.placeholder = "작성해주세요"
             tf.isSecureTextEntry = false
+        }
+    }
+    
+    // edit 버튼 추가 및 addButton 감추기 함수
+    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
+        if todoTableView.isEditing {
+            editButton.title = "Edit"
+            todoTableView.setEditing(false, animated: true)
+            
+            addButton.isEnabled = false
+            addButton.isHidden = true
+        } else {
+            editButton.title = "Done"
+            todoTableView.setEditing(true, animated: true)
+            
+            addButton.isEnabled = true
+            addButton.isHidden = false
         }
     }
 }

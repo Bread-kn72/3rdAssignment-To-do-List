@@ -7,7 +7,9 @@ struct Todo {
 }
 
 extension Todo {
-    static var data: [Todo] = []
+    static var data: [Todo] = [
+    Todo(id: 0, title: "테스트 데이터입니다!", isCompleted: false)
+    ]
     
     // Todo extension의 data 변수에 데이터를 추가하는 함수
     static func addTodoList(title: String, isCompleted: Bool = false) {
