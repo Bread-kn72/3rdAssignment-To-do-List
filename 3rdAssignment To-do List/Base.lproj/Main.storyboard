@@ -38,6 +38,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj5-tY-SDr">
+                                <rect key="frame" x="335" y="103" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -57,6 +64,7 @@
                     <connections>
                         <outlet property="addButton" destination="ymL-M7-h2h" id="R0K-gS-weS"/>
                         <outlet property="editButton" destination="v6c-Sr-FSy" id="ysj-p4-h9U"/>
+                        <outlet property="today" destination="Qj5-tY-SDr" id="yuQ-2G-NTb"/>
                         <outlet property="todoTableView" destination="8At-Pd-v2a" id="3zl-H7-2aX"/>
                     </connections>
                 </viewController>

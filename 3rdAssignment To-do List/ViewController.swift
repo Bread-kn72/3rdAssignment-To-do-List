@@ -6,10 +6,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var todoTableView: UITableView!
     @IBOutlet weak var editButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
+    @IBOutlet weak var today: UILabel!
     
     var todoList = Todo.data
     let cellReuseIdentifier = "todoCell"
     let nib = UINib(nibName: "TodoTableViewCell", bundle: nil)
+    
+    // 오늘 날짜 추가
     
     
     override func viewDidLoad() {
@@ -55,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
-
+    
     
     
     @IBAction func addTodo(_ sender: Any) {
@@ -106,5 +109,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             addButton.isEnabled = true
             addButton.isHidden = false
         }
+    }
+    // edit에서 -버튼으로 cell delete로 
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
 }
