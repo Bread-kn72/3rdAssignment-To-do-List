@@ -1,7 +1,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     
     @IBOutlet weak var todoTableView: UITableView!
     
@@ -21,15 +21,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
     }
     
-//    private func registerXib() {
-//        let nibName = UINib(nibName: "TodoTableViewCell", bundle: nil)
-//        todoTableView.register(nibName, forCellReuseIdentifier: cellReuseIdentifier)
-//    }
-    
+    // tableview의 열 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoList.count
     }
     
+    // tableview와 cell에서 표현되는 부분을 연결
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = todoTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath) as! TodoTableViewCell
         
@@ -39,16 +36,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.todoCellSwitchButton.isOn = todoItem.isCompleted
         cell.updateLabelStrikeThrough()
         
-        
         return cell
     }
     
+    // 우측 슬라이드 시 셀 삭제 함수 - 데이터와 셀을 모두 삭제해야하 완료
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
             
             todoList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            Todo.data.remove(at: indexPath.row)
             
         } else if editingStyle == .insert {
             
@@ -56,9 +54,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
-    // 추가버튼 구현
     @IBAction func addTodo(_ sender: Any) {
+        // 추가버튼 누를때 알람 구현
         let title = "To-do 추가"
         let message = "나의 To-do를 적어보세요"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -76,9 +73,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("입력된 값이 없습니다.")
             }
             self.todoTableView.reloadData()
-            
         }
         
+        //알람 실행
         alert.addAction(cancel)
         alert.addAction(ok)
         
@@ -89,8 +86,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             tf.isSecureTextEntry = false
         }
     }
-    
-    
 }
-
-
