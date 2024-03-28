@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoDetailViewController" customModule="_rdAssignment_To_do_List" customModuleProvider="target">
             <connections>
+                <outlet property="todoDetailTitle" destination="daX-tp-fo3" id="3X8-lt-Lew"/>
+                <outlet property="todoDueDate" destination="XRW-Pl-Ddw" id="m1h-RO-tzX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

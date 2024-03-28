@@ -1,22 +1,22 @@
-//
-//  TodoDetailViewController.swift
-//  3rdAssignment To-do List
-//
-//  Created by Kinam on 3/28/24.
-//
 
 import UIKit
 
 class TodoDetailViewController: UIViewController {
-
-    var todoList = Todo.data
+    
+    var todoData = Todo.data
     
     @IBOutlet weak var todoDetailTitle: UILabel!
+    @IBOutlet weak var todoDueDate: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        setupUI()
+    
     }
-
+    
+    func setupUI() {
+//        todoDetailTitle.text = 
+//        todoDueDate.text =
+    }
 }

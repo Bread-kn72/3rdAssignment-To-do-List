@@ -67,7 +67,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // 디테일 뷰 페이지 이동
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         todoTableView.deselectRow(at: indexPath, animated: true)
-            navigationController?.pushViewController(TodoDetailViewController(), animated: true)
+        navigationController?.pushViewController(TodoDetailViewController(), animated: true)
     }
     
     
@@ -82,10 +82,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         let ok = UIAlertAction(title: "추가", style: .default) { (_) in
             //확인했을때 처리 할 내용
-            let titleTxt = alert.textFields?.first
-            let dueDateTxt = alert.textFields?.first
-            if let newTodoText = titleTxt?.text, dueDateTxt?.text, !newTodoText.isEmpty {
-                Todo.addTodoList(title: newTodoText, dueDate: dueDateTxt)
+            let titleTxt = alert.textFields?[0]
+            let dueDateTxt = alert.textFields?[1]
+            if let newTodoTitleText = titleTxt?.text, let newTodoDuedateText = dueDateTxt?.text {
+                Todo.addTodoList(title: newTodoTitleText, dueDate: newTodoDuedateText)
                 print("입력값 \(Todo.data)")
                 // 데이터를 한번 저장하더라도 새롭게 데이터가 바뀐다면 다시 저장해줘야함.
                 self.todoList = Todo.data
