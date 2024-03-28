@@ -27,7 +27,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         todoTableView.delegate = self
         todoTableView.dataSource = self
-        // identifier 수정
+        // identifier 등록
         todoTableView.register(nib, forCellReuseIdentifier: cellReuseIdentifier)
         today.text = dateString
     }
@@ -64,21 +64,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
     
+    // 디테일 뷰 페이지 이동
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        todoTableView.deselectRow(at: indexPath, animated: true)
+            navigationController?.pushViewController(TodoDetailViewController(), animated: true)
+    }
+    
     
     
     
     @IBAction func addTodo(_ sender: Any) {
         // 추가버튼 누를때 알람 구현
         let title = "To-do 추가"
-        let message = "나의 To-do를 적어보세요"
+        let message = "나의 To-do와 Due Date를 적어보세요"
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let cancel = UIAlertAction(title: "취소", style: .cancel)
         let ok = UIAlertAction(title: "추가", style: .default) { (_) in
             //확인했을때 처리 할 내용
-            let txt = alert.textFields?.first
-            if let newTodoText = txt?.text, !newTodoText.isEmpty {
-                Todo.addTodoList(title: newTodoText)
+            let titleTxt = alert.textFields?.first
+            let dueDateTxt = alert.textFields?.first
+            if let newTodoText = titleTxt?.text, dueDateTxt?.text, !newTodoText.isEmpty {
+                Todo.addTodoList(title: newTodoText, dueDate: dueDateTxt)
                 print("입력값 \(Todo.data)")
                 // 데이터를 한번 저장하더라도 새롭게 데이터가 바뀐다면 다시 저장해줘야함.
                 self.todoList = Todo.data
@@ -94,9 +101,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.present(alert, animated: true)
         
-        alert.addTextField() { (tf) in
-            tf.placeholder = "작성해주세요"
-            tf.isSecureTextEntry = false
+        // 투두 제목 텍스트필드
+        alert.addTextField() { (titleField) in
+            titleField.placeholder = "작성해주세요"
+            titleField.isSecureTextEntry = false
+        }
+        // 투두 듀데이트 텍스트필드
+        alert.addTextField() { (dueDateField) in
+            dueDateField.placeholder = "202x/00/00"
+            dueDateField.isSecureTextEntry = false
         }
     }
     

@@ -16,21 +16,30 @@
                 <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AN-JB-mpt">
-                        <rect key="frame" x="20" y="12" width="232" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AN-JB-mpt">
+                        <rect key="frame" x="20" y="12" width="300" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="300" id="4mG-16-nmW"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvX-LF-p3L">
-                        <rect key="frame" x="326" y="7" width="49" height="31"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EvX-LF-p3L">
+                        <rect key="frame" x="328" y="7" width="51" height="31"/>
                         <connections>
                             <action selector="completedTodo:" destination="KGk-i7-Jjw" eventType="valueChanged" id="SzC-YL-hJV"/>
                         </connections>
                     </switch>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EvX-LF-p3L" secondAttribute="trailing" constant="16" id="LhQ-K6-jYe"/>
+                    <constraint firstItem="EvX-LF-p3L" firstAttribute="leading" secondItem="3AN-JB-mpt" secondAttribute="trailing" constant="8" id="OoA-5a-7W2"/>
+                    <constraint firstItem="3AN-JB-mpt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" symbolic="YES" id="bmP-aj-6PG"/>
+                    <constraint firstItem="EvX-LF-p3L" firstAttribute="centerY" secondItem="3AN-JB-mpt" secondAttribute="centerY" id="lhh-4K-8pX"/>
+                    <constraint firstAttribute="bottom" secondItem="3AN-JB-mpt" secondAttribute="bottom" constant="11" id="mUN-Pu-oEZ"/>
+                    <constraint firstItem="3AN-JB-mpt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="rih-8w-EWJ"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
