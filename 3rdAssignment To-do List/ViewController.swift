@@ -68,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         todoTableView.deselectRow(at: indexPath, animated: true)
         
+        // 테이블 뷰와 선택된 Todo의 데이터를 동일하게 하여 DetailViewController로 전달
         let selectedTodo = Todo.data[indexPath.row]
         
         let todoDetailVC = TodoDetailViewController()
@@ -76,9 +77,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         navigationController?.pushViewController(todoDetailVC, animated: true)
     }
-    
-    
-    
     
     @IBAction func addTodo(_ sender: Any) {
         // 추가버튼 누를때 알람 구현
@@ -140,6 +138,4 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
-    
-    
 }
