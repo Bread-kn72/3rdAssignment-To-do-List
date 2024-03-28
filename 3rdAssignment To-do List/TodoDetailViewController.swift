@@ -3,7 +3,8 @@ import UIKit
 
 class TodoDetailViewController: UIViewController {
     
-    var todoData = Todo.data
+    var titleText: String?
+    var dueDate: String?
     
     @IBOutlet weak var todoDetailTitle: UILabel!
     @IBOutlet weak var todoDueDate: UILabel!
@@ -11,12 +12,14 @@ class TodoDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupUI()
-    
-    }
-    
-    func setupUI() {
-//        todoDetailTitle.text = 
-//        todoDueDate.text =
+        
+        if let titleText = titleText {
+            todoDetailTitle.text = titleText
+        }
+        if let dueDate = dueDate {
+            todoDueDate.text = dueDate
+        }
+        
+        
     }
 }

@@ -67,7 +67,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // 디테일 뷰 페이지 이동
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         todoTableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(TodoDetailViewController(), animated: true)
+        
+        let selectedTodo = Todo.data[indexPath.row]
+        
+        let todoDetailVC = TodoDetailViewController()
+        todoDetailVC.titleText = selectedTodo.title
+        todoDetailVC.dueDate = selectedTodo.dueDate
+        
+        navigationController?.pushViewController(todoDetailVC, animated: true)
     }
     
     

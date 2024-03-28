@@ -17,5 +17,9 @@ extension Todo {
         let newId = data.count
         let newTodo = Todo(id: newId, title: title, isCompleted: isCompleted, dueDate: dueDate)
         data.append(newTodo)
+        
+        let todoDetailVC = TodoDetailViewController()
+                todoDetailVC.titleText = title
+                todoDetailVC.dueDate = dueDate
     }
 }
