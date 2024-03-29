@@ -8,6 +8,7 @@ class TodoDetailViewController: UIViewController {
     
     @IBOutlet weak var todoDetailTitle: UILabel!
     @IBOutlet weak var todoDueDate: UILabel!
+    @IBOutlet weak var dDayLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +20,21 @@ class TodoDetailViewController: UIViewController {
         if let dueDate = dueDate {
             todoDueDate.text = dueDate
         }
+        
+        dDayLabel.text = calculateDDay(targetDate: dueDate!)
+    }
+    
+    //날짜 계산
+    func calculateDDay(targetDate: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy/MM/dd"
+        
+        guard let today = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()), let target = dateFormatter.date(from: dueDate!) else {
+            return nil
+        }
+        
+        let components = Calendar.current.dateComponents([.day], from: today, to: target)
+        
+        return String(components.day!)
     }
 }

@@ -11,6 +11,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var todoList = Todo.data
     let cellReuseIdentifier = "todoCell"
     let nib = UINib(nibName: "TodoTableViewCell", bundle: nil)
+
     
     // 오늘 날짜 추가
     var dateString: String? {
@@ -23,7 +24,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         todoTableView.delegate = self
         todoTableView.dataSource = self

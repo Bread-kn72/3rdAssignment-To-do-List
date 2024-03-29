@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoDetailViewController" customModule="_rdAssignment_To_do_List" customModuleProvider="target">
             <connections>
+                <outlet property="dDayLabel" destination="Jj4-r8-WOo" id="hEO-dS-ar1"/>
                 <outlet property="todoDetailTitle" destination="daX-tp-fo3" id="3X8-lt-Lew"/>
                 <outlet property="todoDueDate" destination="XRW-Pl-Ddw" id="m1h-RO-tzX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,23 +45,40 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-Day:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be3-0T-2p9">
+                    <rect key="frame" x="60" y="566" width="62" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jj4-r8-WOo">
+                    <rect key="frame" x="156" y="566" width="217" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="daX-tp-fo3" secondAttribute="trailing" constant="30" id="103-n9-5OJ"/>
                 <constraint firstItem="XRW-Pl-Ddw" firstAttribute="top" secondItem="daX-tp-fo3" secondAttribute="bottom" constant="16" id="2li-J0-8Ab"/>
+                <constraint firstItem="be3-0T-2p9" firstAttribute="centerY" secondItem="Jj4-r8-WOo" secondAttribute="centerY" id="6r5-bE-lnw"/>
                 <constraint firstItem="wMZ-AI-cef" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="Ah5-VL-FyF"/>
                 <constraint firstItem="wMZ-AI-cef" firstAttribute="top" secondItem="daX-tp-fo3" secondAttribute="bottom" constant="16" id="C50-UK-Spx"/>
                 <constraint firstItem="XRW-Pl-Ddw" firstAttribute="leading" secondItem="wMZ-AI-cef" secondAttribute="trailing" constant="19" id="H0m-0i-009"/>
                 <constraint firstItem="daX-tp-fo3" firstAttribute="top" secondItem="J3q-7n-7gy" secondAttribute="bottom" constant="8" id="LZ3-rU-Pf7"/>
+                <constraint firstItem="Jj4-r8-WOo" firstAttribute="leading" secondItem="XRW-Pl-Ddw" secondAttribute="leading" id="Yce-RE-eMd"/>
                 <constraint firstItem="J3q-7n-7gy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="50" id="aIe-Ae-WOO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XRW-Pl-Ddw" secondAttribute="trailing" constant="20" id="doA-OI-p7Q"/>
                 <constraint firstItem="J3q-7n-7gy" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="lCf-c8-IfX"/>
                 <constraint firstItem="XRW-Pl-Ddw" firstAttribute="centerY" secondItem="wMZ-AI-cef" secondAttribute="centerY" id="nzm-a5-cYX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J3q-7n-7gy" secondAttribute="trailing" constant="50" id="okx-3l-GOk"/>
+                <constraint firstItem="Jj4-r8-WOo" firstAttribute="top" secondItem="XRW-Pl-Ddw" secondAttribute="bottom" constant="30" id="pVs-9D-vs0"/>
                 <constraint firstItem="J3q-7n-7gy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qcf-JL-NtL"/>
                 <constraint firstItem="daX-tp-fo3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="u33-5f-htz"/>
+                <constraint firstItem="Jj4-r8-WOo" firstAttribute="trailing" secondItem="XRW-Pl-Ddw" secondAttribute="trailing" id="vkV-zN-N4L"/>
+                <constraint firstItem="be3-0T-2p9" firstAttribute="centerX" secondItem="wMZ-AI-cef" secondAttribute="centerX" id="xS8-8s-h0F"/>
             </constraints>
             <point key="canvasLocation" x="-21" y="21"/>
         </view>
