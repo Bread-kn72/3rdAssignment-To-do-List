@@ -21,7 +21,8 @@ class TodoDetailViewController: UIViewController {
             todoDueDate.text = dueDate
         }
         
-        dDayLabel.text = calculateDDay(targetDate: dueDate!)
+        // 디데이 표시
+        dDayLabel.text = "\(String(describing: calculateDDay(targetDate: dueDate!)!))일 남았습니다."
     }
     
     //날짜 계산
